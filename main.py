@@ -54,38 +54,49 @@ def get_viral_content():
     
     # Make prompt dynamic with random themes/topics for variety
     themes = [
-         "The power of Tahajjud: Winning while the world sleeps",
-        "Sabr is not weakness; it is the ultimate warrior's strength",
-        "Fearing only the Creator, never the creation",
-        "Building an empire for the Akhirah (Afterlife) first",
-        "The discipline of Salah: A CEO's ultimate routine",
-        "Sunnah of excellence: Being the best in your craft",
-        "Tawakkul: Taking action and leaving the result to Allah",
-        "Breaking free from the illusions of the Dunya",
-        "Rising after failure through Dua and hard work",
-        "Character (Akhlaq) is the true mark of a leader",
-    ]
-    
+    "Sabr as discipline, not weakness",
+    "Tawakkul without laziness",
+    "Silent obedience when results are delayed",
+    "Building the Akhirah before the Dunya",
+    "Consistency in Salah over emotional Imaan",
+    "Lowering ego to raise character (Akhlaq)",
+    "Winning with faith while the world sleeps"
+]
+
     selected_theme = random.choice(themes)
     timestamp = int(time.time())  # Add timestamp for uniqueness
     
     prompt = (
-       f"Role: You are a lion-hearted Islamic motivational speaker (Warrior Mindset). "
-        f"Your tone is high-energy, deeply masculine, and spiritually empowering. "
-        f"Session: {timestamp}. "
-        f"Generate a FRESH 15-second viral script in urdu/Hindi. "
-        f"Requirements: "
-        f"1. THE HOOK (0-3 sec): A slap-of-reality about faith and strength. (e.g., 'Duniya ke aage rona band karo...') "
-        f"2. THE BODY (3-15 sec): A mix of warrior discipline and spiritual wisdom. Use 1-2 powerful Arabic terms like Sabr, Tawakkul, or Qadr naturally within the Hindi flow. "
-        f"3. No sectarianism or hate. Focus on self-improvement, grit, and devotion to the Creator. "
-        f"Output Guidelines: "
-        f"1. STRICT JSON ONLY. No markdown, no preamble. "
-        f"2. Keys: 'hindi_quote', 'english_translation', 'caption', 'hashtags'. "
-        f"3. Caption: SEO-optimized, engaging, 15-20 words (e.g., 'Stop chasing people, start chasing your purpose. 🦁'). "
-        f"4. Hashtags: 12-15 tags (e.g., #IslamicMotivation #MuslimMindset #DeenOverDunya #HindiQuotes). "
-        f"5. Make it VIRAL, RAW, and UNSTOPPABLE."
-        f"Make it VIRAL-WORTHY and UNIQUE!"
-    )
+    f"Role: You are an anonymous Islamic guide speaking to Muslim men who feel spiritually lost. "
+    f"Your tone is calm, firm, and grounded. Never loud. Never dramatic. "
+    f"You speak like someone who practices sabr and obedience daily. "
+
+    f"Theme: {selected_theme}. "
+    f"Session ID: {timestamp}. "
+
+    f"Task: Generate a UNIQUE 15-second script in Hindi/Urdu (Devanagari or Roman Urdu acceptable). "
+
+    f"STRICT LENGTH RULES (MANDATORY): "
+    f"- TOTAL WORD COUNT: 32 to 36 words ONLY. "
+    f"- Short sentences. No filler. "
+
+    f"Structure: "
+    f"1. HOOK (first 8–10 words): A quiet but firm truth about Deen or discipline. "
+    f"2. BODY (18–22 words): One principle connecting sabr, action, and trust in Allah. "
+    f"   Use at most ONE Arabic term (e.g., Sabr or Tawakkul). "
+    f"3. CLOSE (last 5–6 words): EXACTLY this line: "
+    f"'Roz aisi yaad ke liye follow karo.' "
+
+    f"Rules: "
+    f"- Do NOT sound motivational or aggressive. "
+    f"- Do NOT use emojis. "
+    f"- Do NOT repeat phrases from earlier scripts. "
+    f"- Make it sound practiced, not preached. "
+
+    f"Output format: STRICT JSON ONLY with keys: "
+    f"'hindi_quote', 'english_translation', 'caption', 'hashtags'. "
+)
+
 
     try:
         response = client.models.generate_content(
