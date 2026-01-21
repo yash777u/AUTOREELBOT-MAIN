@@ -3,8 +3,7 @@ name: Auto Post Reels
 on:
   schedule:
     # Run 3 times daily: 6 AM, 2 PM, 10 PM IST (0:30, 8:30, 16:30 UTC)
-    - cron: '30 9 * * *'   # 6:00 AM IST
-    - cron: '30 10 * * *'   
+    - cron: '30 9 * * *'   # 6:00 AM IST 
     - cron: '30 12 * * *'   # 2:00 PM IST
     - cron: '30 13 * * *'  # 10:00 PM IST
   workflow_dispatch:  # Allow manual trigger
